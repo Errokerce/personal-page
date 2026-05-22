@@ -33,7 +33,7 @@ const LINKS_SECTION = {
 const FOOTER_NOTE =(
   <>
     幫我製造布丁的人們：<br></br>
-    2D Desigh: <a href="https://x.com/rakusan7826">楽桑</a><br></br>
+    2D Design: <a href="https://x.com/rakusan7826">楽桑</a><br></br>
     3D Model: nylonheart<br></br>
     Emote: <a href="https://x.com/ruochi2022">若祈RuoChi</a><br></br>
   </>
@@ -62,7 +62,7 @@ const THEMES = {
     asideBg: "bg-[#120f12]/90 text-rose-50",
     asideLabel: "text-rose-200/60",
     asideDesc: "text-rose-100/70",
-    linkItem: "border-white/10 bg-white/5 hover:bg-white/10 hover:-translate-y-0.5",
+    linkItem: "border-white/10 bg-white/5 hover:bg-white/10 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-rose-300 active:scale-[0.98]",
     linkIcon: "bg-white/10",
     linkNote: "text-rose-100/70",
     footer: "border-white/10 bg-white/5 text-rose-100/75",
@@ -83,7 +83,7 @@ const THEMES = {
     asideBg: "bg-[#6f535d]/85 text-rose-50",
     asideLabel: "text-rose-200",
     asideDesc: "text-rose-100/85",
-    linkItem: "border-white/10 bg-white/10 hover:bg-white/16 hover:-translate-y-0.5",
+    linkItem: "border-white/10 bg-white/10 hover:bg-white/16 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-rose-300 active:scale-[0.98]",
     linkIcon: "bg-white/14",
     linkNote: "text-rose-100/75",
     footer: "border-white/10 bg-black/10 text-rose-100/80",

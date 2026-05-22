@@ -1,4 +1,14 @@
 @import "tailwindcss";
+
+footer a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+  &:hover {
+    opacity: 1;
+  }
+}
 /* 
 :root {
   --text: #6b6375;
