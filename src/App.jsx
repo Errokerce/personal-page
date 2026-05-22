@@ -197,7 +197,7 @@ export default function SocialLinksLandingPage() {
               <figure
                 className={`overflow-hidden rounded-[1.25rem] border transition-colors duration-300 ${theme.bannerFrame}`}
               >
-                <div className="h-[240px] w-full md:h-auto md:aspect-[16/9]">
+                <div className="h-[240px] w-full overflow-hidden md:h-auto md:aspect-[16/9]">
                   <img
                     src={bannerSrc}
                     alt="二ノ宮しずめ的頻道橫幅"
