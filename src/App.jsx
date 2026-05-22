@@ -209,7 +209,7 @@ export default function SocialLinksLandingPage() {
                 </div>
               </figure>
 
-              <div className="-mt-14 flex items-end gap-4 px-4 md:px-6">
+              <div className="relative z-10 -mt-14 flex items-end gap-4 px-4 md:px-6">
                 <div
                   className={`h-28 w-28 overflow-hidden rounded-full border-4 shadow-lg transition-colors duration-300 ${theme.avatarFrame}`}
                 >
