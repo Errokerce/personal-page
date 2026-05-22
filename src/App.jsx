@@ -166,6 +166,27 @@ export default function SocialLinksLandingPage() {
 
   return (
     <div className={`min-h-screen ${theme.pageBg} ${theme.pageText} transition-colors duration-300`}>
+      <div className="fixed bottom-5 right-5 z-30 md:top-8 md:bottom-auto md:right-8">
+        <label
+          className={`flex items-center gap-3 rounded-full border px-3 py-2 shadow-lg backdrop-blur-sm transition-colors duration-300 ${theme.toggleWrap}`}
+        >
+          <span className={`text-xs tracking-[0.2em] uppercase ${theme.toggleLabel}`}>
+            {isDark ? "Dark" : "Light"}
+          </span>
+          <button
+            type="button"
+            role="switch"
+            aria-checked={isDark}
+            aria-label="Toggle dark mode"
+            onClick={() => setIsDark((prev) => !prev)}
+            className={`relative h-7 w-12 rounded-full transition-colors duration-300 ${theme.toggleTrack}`}
+          >
+            <span
+              className={`absolute top-1 h-5 w-5 rounded-full transition-all duration-300 ${theme.toggleThumb} ${isDark ? "left-6" : "left-1"}`}
+            />
+          </button>
+        </label>
+      </div>
       <div className="mx-auto grid min-h-screen w-full place-items-center p-6 md:p-10">
         <div
           className={`animate-fade-in-up grid w-full overflow-hidden rounded-[2rem] border shadow-xl transition-colors duration-300 md:grid-cols-[minmax(0,1fr)_400px] ${theme.shell}`}
@@ -226,27 +247,6 @@ export default function SocialLinksLandingPage() {
           </header>
 
           <main className={`flex md:min-h-[720px] flex-col justify-center gap-4 p-6 transition-colors duration-300 md:p-8 ${theme.asideBg}`}>
-            <div className="flex justify-end">
-              <label
-                className={`flex items-center gap-3 rounded-full border px-3 py-2 transition-colors duration-300 ${theme.toggleWrap}`}
-              >
-                <span className={`text-xs tracking-[0.2em] uppercase ${theme.toggleLabel}`}>
-                  {isDark ? "Dark" : "Light"}
-                </span>
-                <button
-                  type="button"
-                  role="switch"
-                  aria-checked={isDark}
-                  aria-label="Toggle dark mode"
-                  onClick={() => setIsDark((prev) => !prev)}
-                  className={`relative h-7 w-12 rounded-full transition-colors duration-300 ${theme.toggleTrack}`}
-                >
-                  <span
-                    className={`absolute top-1 h-5 w-5 rounded-full transition-all duration-300 ${theme.toggleThumb} ${isDark ? "left-6" : "left-1"}`}
-                  />
-                </button>
-              </label>
-            </div>
 
             <div>
               <div className={`text-xs tracking-[0.24em] uppercase ${theme.asideLabel}`} aria-hidden="true">links</div>
