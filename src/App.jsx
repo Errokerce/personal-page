@@ -174,23 +174,23 @@ export default function SocialLinksLandingPage() {
         <div
           className={`grid w-full overflow-hidden rounded-[2rem] border shadow-xl transition-colors duration-300 md:grid-cols-[minmax(0,1fr)_400px] ${theme.shell}`}
         >
-          <section className="relative min-h-[720px] overflow-hidden p-6 md:p-10">
+          <header className="relative min-h-[720px] overflow-hidden p-6 md:p-10">
             <div className={`absolute inset-0 ${theme.leftOverlay}`} />
             <div className="relative z-10 flex h-full flex-col">
-              <div
+              <figure
                 className={`overflow-hidden rounded-[1.25rem] border transition-colors duration-300 ${theme.bannerFrame}`}
               >
                 <div className="h-[240px] w-full md:h-auto md:aspect-[16/9]">
                   <img
                     src={PROFILE.bannerSrc}
-                    alt="profile banner"
+                    alt="二ノ宮しずめ的頻道橫幅"
                     loading="eager"
                     decoding="async"
                     fetchPriority="high"
                     className="h-full w-full object-cover object-top"
                   />
                 </div>
-              </div>
+              </figure>
 
               <div className="-mt-14 flex items-end gap-4 px-4 md:px-6">
                 <div
@@ -198,7 +198,7 @@ export default function SocialLinksLandingPage() {
                 >
                   <img
                     src={PROFILE.avatarSrc}
-                    alt="avatar"
+                    alt="二ノ宮しずめ的頭像"
                     loading="eager"
                     decoding="async"
                     className="h-full w-full object-cover object-center"
@@ -216,52 +216,58 @@ export default function SocialLinksLandingPage() {
                   </p>
                 </div>
 
-                <div
+                <article
                   className={`rounded-[1.75rem] border p-5 text-center transition-colors duration-300 ${theme.card}`}
+                  aria-label="公告"
                 >
-                  <div className="text-lg">{ANNOUNCEMENT.icon}</div>
+                  <div className="text-lg" aria-hidden="true">{ANNOUNCEMENT.icon}</div>
                   <p className="mt-2 whitespace-pre-line text-sm leading-6 md:text-base">
                     {ANNOUNCEMENT.text}
                   </p>
-                </div>
+                </article>
               </div>
             </div>
-          </section>
+          </header>
 
-          <aside className={`flex min-h-[720px] flex-col justify-center gap-4 p-6 transition-colors duration-300 md:p-8 ${theme.asideBg}`}>
+          <main className={`flex min-h-[720px] flex-col justify-center gap-4 p-6 transition-colors duration-300 md:p-8 ${theme.asideBg}`}>
             <div>
-              <div className={`text-xs tracking-[0.24em] uppercase ${theme.asideLabel}`}>links</div>
+              <div className={`text-xs tracking-[0.24em] uppercase ${theme.asideLabel}`} aria-hidden="true">links</div>
               <h2 className="mt-2 text-2xl font-semibold">{LINKS_SECTION.title}</h2>
               <p className={`mt-2 text-sm leading-6 ${theme.asideDesc}`}>
                 {LINKS_SECTION.description}
               </p>
             </div>
 
-            <div className="mt-2 space-y-3">
-              {LINKS.map((link) => (
-                <a
-                  key={link.id}
-                  href={link.href}
-                  className={`group flex items-center justify-between rounded-2xl border px-4 py-4 transition duration-300 ${theme.linkItem}`}
-                >
-                  <div className="flex items-center gap-4">
-                    <div className={`flex h-12 w-12 items-center justify-center rounded-2xl text-2xl ${theme.linkIcon}`}>
-                      {link.icon}
-                    </div>
-                    <div>
-                      <div className="text-base font-medium">{link.name}</div>
-                      <div className={`text-sm ${theme.linkNote}`}>{link.note}</div>
-                    </div>
-                  </div>
-                  <div className="text-xl transition group-hover:translate-x-1">→</div>
-                </a>
-              ))}
-            </div>
+            <nav aria-label="社群連結">
+              <ul className="mt-2 space-y-3 list-none p-0 m-0">
+                {LINKS.map((link) => (
+                  <li key={link.id}>
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`group flex items-center justify-between rounded-2xl border px-4 py-4 transition duration-300 ${theme.linkItem}`}
+                    >
+                      <div className="flex items-center gap-4">
+                        <span className={`flex h-12 w-12 items-center justify-center rounded-2xl text-2xl ${theme.linkIcon}`} aria-hidden="true">
+                          {link.icon}
+                        </span>
+                        <div>
+                          <span className="text-base font-medium">{link.name}</span>
+                          <span className={`block text-sm ${theme.linkNote}`}>{link.note}</span>
+                        </div>
+                      </div>
+                      <span className="text-xl transition group-hover:translate-x-1" aria-hidden="true">→</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
 
-            <div className={`mt-4 rounded-2xl border p-4 text-sm leading-6 transition-colors duration-300 ${theme.footer}`}>
+            <footer className={`mt-4 rounded-2xl border p-4 text-sm leading-6 transition-colors duration-300 ${theme.footer}`}>
               {FOOTER_NOTE}
-            </div>
-          </aside>
+            </footer>
+          </main>
         </div>
       </div>
     </div>
