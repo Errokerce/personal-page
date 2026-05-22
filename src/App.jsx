@@ -44,7 +44,7 @@ const LINKS = [
   { id: "x", name: "Twitter", href: "https://www.twitter.com/pur1nsuki", icon: <SiX />, note: "日常" },
   { id: "mosir", name: "Mosir", href: "https://beta.mosir.app/profile/pur1nsuki", icon: <img src={mosirLogo} alt="" className="h-8 w-8" />, note: "遊戲廢文" },
   { id: "youtube", name: "YouTube", href: "https://www.youtube.com/@pur1nsuki", icon: <SiYoutube />, note: "純放置" },
-  { id: "discord", name: "Discord", href: "https://discord.gg/ksr6sQjwYP", icon: <SiDiscord />, note: "貼圖群（籌備中）" },
+  { id: "discord", name: "Discord", href: "https://discord.gg/ksr6sQjwYP", icon: <SiDiscord />, note: "貼圖群" },
   { id: "design", name: "Design", href: "https://x.com/pur1nsuki/status/1826610775466934403", icon: "🍮", note: "三視圖" },
   // { id: "bluesky", name: "Bluesky", href: "#", icon: "🦋", note: "日常 / 想法" },
 ];
