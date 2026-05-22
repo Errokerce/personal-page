@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { SiTwitch, SiX, SiYoutube, SiDiscord } from "react-icons/si";
 import bannerImg from "./assets/banner.png";
 import avatarImg from "./assets/avatar.png";
 
@@ -35,11 +36,11 @@ const FOOTER_NOTE =(
 );
 
 const LINKS = [
-  { id: "twitch", name: "Twitch", href: "https://www.twitch.tv/pur1nsuki", icon: "🎮", note: "少開" },
-  { id: "x", name: "Twitter", href: "https://www.twitter.com/pur1nsuki", icon: "❌", note: "日常" },
+  { id: "twitch", name: "Twitch", href: "https://www.twitch.tv/pur1nsuki", icon: <SiTwitch />, note: "少開" },
+  { id: "x", name: "Twitter", href: "https://www.twitter.com/pur1nsuki", icon: <SiX />, note: "日常" },
   { id: "mosir", name: "Mosir", href: "https://beta.mosir.app/profile/pur1nsuki", icon: "🐥", note: "遊戲廢文" },
-  { id: "youtube", name: "YouTube", href: "https://www.twitter.com/pur1nsuki", icon: "▶️", note: "純放置" },
-  { id: "discord", name: "Discord", href: "#", icon: "🕹️", note: "貼圖群（籌備中）" },
+  { id: "youtube", name: "YouTube", href: "https://www.twitter.com/pur1nsuki", icon: <SiYoutube />, note: "純放置" },
+  { id: "discord", name: "Discord", href: "#", icon: <SiDiscord />, note: "貼圖群（籌備中）" },
   { id: "design", name: "Design", href: "https://x.com/pur1nsuki/status/1826610775466934403", icon: "🍮", note: "三視圖" },
   // { id: "bluesky", name: "Bluesky", href: "#", icon: "🦋", note: "日常 / 想法" },
 ];
