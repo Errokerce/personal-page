@@ -1,13 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { SiTwitch, SiX, SiYoutube, SiDiscord } from "react-icons/si";
-import bannerImg from "./assets/banner.png";
+import bannerLossy from "./assets/banner-lossy.webp";
+import bannerLossless from "./assets/banner-lossless.webp";
 import avatarImg from "./assets/avatar.png";
+
+const BANNER_PLACEHOLDER = "data:image/webp;base64,UklGRugBAABXRUJQVlA4WAoAAAAQAAAAPwAAIwAAQUxQSCwAAAABJ9D/iAgoim2lIsJ7RIACoDawf6q/excR/Z8AeQlS8OS3CFpvEzS3qkNUB1ZQOCCWAQAAUAsAnQEqQAAkAD8RfLBSrCgkIqq7/AGAIglAGD218wxeqGfSrg0EyZ/+gGZljhi9rx0xJtSz/04AAh1deq5VFhNUe6kRIu4NDQOszTjY65djqHrVVQZDgVMF1fESCoZmbS0AAP7yq4P7nTdqn1/JrZc3RKlMdgCjd3GHYOaf0JmCTV1AlpNYhrUqHcxy8Yt+71IZhYJyiay2NX1xIzY3TEAHucG7pOJDm8F5rfuSr2xBuX/e/KLmA9nEjAjY9cNxlKiGyO4LKSGbWDgBrdX006uxBKgAUQUBOlk0YXNSHiVX6oQVlnrDq/qXFEAxtg8Rw1O76UqR//Cg7GOWiG1JeiNRfU4FvR3iZWYHkRZFq65VxssGAgUtpwD8nsKqNMIxxgZXUlEM897200BJKVHQ90R2E6rnJfHtsvajoN4RZPzC3iHGWtbq4P3r/T+27U1b8bLz/YKSC7dlibXmCp3ntWrxmeGwOInzVUrSAjtHw185iDDHruszyFm8DqoR9GfQSAQhQGV80sPTnyLYwsnawafdT9AAAA==";
 
 const PROFILE = {
   name: "二ノ宮しずめ",
   bio: `🍮(二二)不是Vtuber
 只是一個找不到事做的人嘗試開台找事做`,
-  bannerSrc: bannerImg,
+  bannerSrc: bannerLossy,
   avatarSrc: avatarImg,
 };
 
@@ -104,7 +107,20 @@ function getInitialTheme() {
 
 export default function SocialLinksLandingPage() {
   const [isDark, setIsDark] = useState(getInitialTheme);
+  const [bannerSrc, setBannerSrc] = useState(BANNER_PLACEHOLDER);
   const theme = isDark ? THEMES.dark : THEMES.light;
+
+  // Progressive banner loading: placeholder → lossy → lossless
+  useEffect(() => {
+    const lossy = new Image();
+    lossy.src = bannerLossy;
+    lossy.onload = () => {
+      setBannerSrc(bannerLossy);
+      const lossless = new Image();
+      lossless.src = bannerLossless;
+      lossless.onload = () => setBannerSrc(bannerLossless);
+    };
+  }, []);
 
   useEffect(() => {
     if (typeof window === "undefined") return undefined;
@@ -183,7 +199,7 @@ export default function SocialLinksLandingPage() {
               >
                 <div className="h-[240px] w-full md:h-auto md:aspect-[16/9]">
                   <img
-                    src={PROFILE.bannerSrc}
+                    src={bannerSrc}
                     alt="二ノ宮しずめ的頻道橫幅"
                     loading="eager"
                     decoding="async"
