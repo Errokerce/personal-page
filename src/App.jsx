@@ -167,34 +167,33 @@ export default function SocialLinksLandingPage() {
   return (
     <div className={`min-h-screen ${theme.pageBg} ${theme.pageText} transition-colors duration-300`}>
       <div className="mx-auto grid min-h-screen w-full place-items-center p-6 md:p-10">
-        <div className="fixed right-5 top-5 z-30 md:right-8 md:top-8">
-          <label
-            className={`flex items-center gap-3 rounded-full border px-3 py-2 transition-colors duration-300 ${theme.toggleWrap}`}
-          >
-            <span className={`text-xs tracking-[0.2em] uppercase ${theme.toggleLabel}`}>
-              {isDark ? "Dark" : "Light"}
-            </span>
-            <button
-              type="button"
-              role="switch"
-              aria-checked={isDark}
-              aria-label="Toggle dark mode"
-              onClick={() => setIsDark((prev) => !prev)}
-              className={`relative h-7 w-12 rounded-full transition-colors duration-300 ${theme.toggleTrack}`}
-            >
-              <span
-                className={`absolute top-1 h-5 w-5 rounded-full transition-all duration-300 ${theme.toggleThumb} ${isDark ? "left-6" : "left-1"}`}
-              />
-            </button>
-          </label>
-        </div>
-
         <div
           className={`animate-fade-in-up grid w-full overflow-hidden rounded-[2rem] border shadow-xl transition-colors duration-300 md:grid-cols-[minmax(0,1fr)_400px] ${theme.shell}`}
         >
           <header className="relative md:min-h-[720px] overflow-hidden p-6 md:p-10">
             <div className={`absolute inset-0 ${theme.leftOverlay}`} />
             <div className="relative z-10 flex h-full flex-col">
+              <div className="mb-4 flex justify-end">
+                <label
+                  className={`flex items-center gap-3 rounded-full border px-3 py-2 transition-colors duration-300 ${theme.toggleWrap}`}
+                >
+                  <span className={`text-xs tracking-[0.2em] uppercase ${theme.toggleLabel}`}>
+                    {isDark ? "Dark" : "Light"}
+                  </span>
+                  <button
+                    type="button"
+                    role="switch"
+                    aria-checked={isDark}
+                    aria-label="Toggle dark mode"
+                    onClick={() => setIsDark((prev) => !prev)}
+                    className={`relative h-7 w-12 rounded-full transition-colors duration-300 ${theme.toggleTrack}`}
+                  >
+                    <span
+                      className={`absolute top-1 h-5 w-5 rounded-full transition-all duration-300 ${theme.toggleThumb} ${isDark ? "left-6" : "left-1"}`}
+                    />
+                  </button>
+                </label>
+              </div>
               <figure
                 className={`overflow-hidden rounded-[1.25rem] border transition-colors duration-300 ${theme.bannerFrame}`}
               >
