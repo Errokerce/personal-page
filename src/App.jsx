@@ -204,7 +204,7 @@ export default function SocialLinksLandingPage() {
                     loading="eager"
                     decoding="async"
                     fetchPriority="high"
-                    className="h-full w-full object-cover object-top"
+                    className={`h-full w-full object-cover object-top transition-[filter] duration-500 ${bannerSrc === BANNER_PLACEHOLDER ? "blur-sm scale-105" : "blur-0 scale-100"}`}
                   />
                 </div>
               </figure>
@@ -267,7 +267,7 @@ export default function SocialLinksLandingPage() {
                       className={`group flex items-center justify-between rounded-2xl border px-4 py-4 transition duration-300 ${theme.linkItem}`}
                     >
                       <div className="flex items-center gap-4">
-                        <span className={`flex h-12 w-12 items-center justify-center rounded-2xl text-2xl ${theme.linkIcon}`} aria-hidden="true">
+                        <span className={`flex h-12 w-12 items-center justify-center rounded-2xl text-2xl transition-transform duration-300 group-hover:scale-110 ${theme.linkIcon}`} aria-hidden="true">
                           {link.icon}
                         </span>
                         <div>
