@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { SiTwitch, SiX, SiYoutube, SiDiscord } from "react-icons/si";
 import bannerLossy from "./assets/banner-lossy.webp";
 import bannerLossless from "./assets/banner-lossless.webp";
-import avatarImg from "./assets/avatar.png";
+import avatarImg from "./assets/avatar.webp";
 import mosirLogo from "./assets/mosir-logo.svg";
 
 const BANNER_PLACEHOLDER = "data:image/webp;base64,UklGRugBAABXRUJQVlA4WAoAAAAQAAAAPwAAIwAAQUxQSCwAAAABJ9D/iAgoim2lIsJ7RIACoDawf6q/excR/Z8AeQlS8OS3CFpvEzS3qkNUB1ZQOCCWAQAAUAsAnQEqQAAkAD8RfLBSrCgkIqq7/AGAIglAGD218wxeqGfSrg0EyZ/+gGZljhi9rx0xJtSz/04AAh1deq5VFhNUe6kRIu4NDQOszTjY65djqHrVVQZDgVMF1fESCoZmbS0AAP7yq4P7nTdqn1/JrZc3RKlMdgCjd3GHYOaf0JmCTV1AlpNYhrUqHcxy8Yt+71IZhYJyiay2NX1xIzY3TEAHucG7pOJDm8F5rfuSr2xBuX/e/KLmA9nEjAjY9cNxlKiGyO4LKSGbWDgBrdX006uxBKgAUQUBOlk0YXNSHiVX6oQVlnrDq/qXFEAxtg8Rw1O76UqR//Cg7GOWiG1JeiNRfU4FvR3iZWYHkRZFq65VxssGAgUtpwD8nsKqNMIxxgZXUlEM897200BJKVHQ90R2E6rnJfHtsvajoN4RZPzC3iHGWtbq4P3r/T+27U1b8bLz/YKSC7dlibXmCp3ntWrxmeGwOInzVUrSAjtHw185iDDHruszyFm8DqoR9GfQSAQhQGV80sPTnyLYwsnawafdT9AAAA==";
@@ -190,9 +190,9 @@ export default function SocialLinksLandingPage() {
         </div>
 
         <div
-          className={`grid w-full overflow-hidden rounded-[2rem] border shadow-xl transition-colors duration-300 md:grid-cols-[minmax(0,1fr)_400px] ${theme.shell}`}
+          className={`animate-fade-in-up grid w-full overflow-hidden rounded-[2rem] border shadow-xl transition-colors duration-300 md:grid-cols-[minmax(0,1fr)_400px] ${theme.shell}`}
         >
-          <header className="relative min-h-[720px] overflow-hidden p-6 md:p-10">
+          <header className="relative md:min-h-[720px] overflow-hidden p-6 md:p-10">
             <div className={`absolute inset-0 ${theme.leftOverlay}`} />
             <div className="relative z-10 flex h-full flex-col">
               <figure
@@ -247,7 +247,7 @@ export default function SocialLinksLandingPage() {
             </div>
           </header>
 
-          <main className={`flex min-h-[720px] flex-col justify-center gap-4 p-6 transition-colors duration-300 md:p-8 ${theme.asideBg}`}>
+          <main className={`flex md:min-h-[720px] flex-col justify-center gap-4 p-6 transition-colors duration-300 md:p-8 ${theme.asideBg}`}>
             <div>
               <div className={`text-xs tracking-[0.24em] uppercase ${theme.asideLabel}`} aria-hidden="true">links</div>
               <h2 className="mt-2 text-2xl font-semibold">{LINKS_SECTION.title}</h2>
