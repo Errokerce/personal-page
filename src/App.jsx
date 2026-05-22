@@ -166,7 +166,7 @@ export default function SocialLinksLandingPage() {
 
   return (
     <div className={`min-h-screen ${theme.pageBg} ${theme.pageText} transition-colors duration-300`}>
-      <div className="fixed bottom-5 right-5 z-30 md:top-8 md:bottom-auto md:right-8">
+      <div className="fixed bottom-8 right-8 z-30 md:top-12 md:bottom-auto md:right-12">
         <label
           className={`flex items-center gap-3 rounded-full border px-3 py-2 shadow-lg backdrop-blur-sm transition-colors duration-300 ${theme.toggleWrap}`}
         >
