@@ -3,6 +3,7 @@ import { SiTwitch, SiX, SiYoutube, SiDiscord } from "react-icons/si";
 import bannerLossy from "./assets/banner-lossy.webp";
 import bannerLossless from "./assets/banner-lossless.webp";
 import avatarImg from "./assets/avatar.png";
+import mosirLogo from "./assets/mosir-logo.svg";
 
 const BANNER_PLACEHOLDER = "data:image/webp;base64,UklGRugBAABXRUJQVlA4WAoAAAAQAAAAPwAAIwAAQUxQSCwAAAABJ9D/iAgoim2lIsJ7RIACoDawf6q/excR/Z8AeQlS8OS3CFpvEzS3qkNUB1ZQOCCWAQAAUAsAnQEqQAAkAD8RfLBSrCgkIqq7/AGAIglAGD218wxeqGfSrg0EyZ/+gGZljhi9rx0xJtSz/04AAh1deq5VFhNUe6kRIu4NDQOszTjY65djqHrVVQZDgVMF1fESCoZmbS0AAP7yq4P7nTdqn1/JrZc3RKlMdgCjd3GHYOaf0JmCTV1AlpNYhrUqHcxy8Yt+71IZhYJyiay2NX1xIzY3TEAHucG7pOJDm8F5rfuSr2xBuX/e/KLmA9nEjAjY9cNxlKiGyO4LKSGbWDgBrdX006uxBKgAUQUBOlk0YXNSHiVX6oQVlnrDq/qXFEAxtg8Rw1O76UqR//Cg7GOWiG1JeiNRfU4FvR3iZWYHkRZFq65VxssGAgUtpwD8nsKqNMIxxgZXUlEM897200BJKVHQ90R2E6rnJfHtsvajoN4RZPzC3iHGWtbq4P3r/T+27U1b8bLz/YKSC7dlibXmCp3ntWrxmeGwOInzVUrSAjtHw185iDDHruszyFm8DqoR9GfQSAQhQGV80sPTnyLYwsnawafdT9AAAA==";
 
@@ -41,7 +42,7 @@ const FOOTER_NOTE =(
 const LINKS = [
   { id: "twitch", name: "Twitch", href: "https://www.twitch.tv/pur1nsuki", icon: <SiTwitch />, note: "少開" },
   { id: "x", name: "Twitter", href: "https://www.twitter.com/pur1nsuki", icon: <SiX />, note: "日常" },
-  { id: "mosir", name: "Mosir", href: "https://beta.mosir.app/profile/pur1nsuki", icon: "🐥", note: "遊戲廢文" },
+  { id: "mosir", name: "Mosir", href: "https://beta.mosir.app/profile/pur1nsuki", icon: <img src={mosirLogo} alt="" className="h-8 w-8" />, note: "遊戲廢文" },
   { id: "youtube", name: "YouTube", href: "https://www.twitter.com/pur1nsuki", icon: <SiYoutube />, note: "純放置" },
   { id: "discord", name: "Discord", href: "#", icon: <SiDiscord />, note: "貼圖群（籌備中）" },
   { id: "design", name: "Design", href: "https://x.com/pur1nsuki/status/1826610775466934403", icon: "🍮", note: "三視圖" },
