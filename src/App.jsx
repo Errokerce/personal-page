@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { SiTwitch, SiX, SiYoutube, SiDiscord } from "react-icons/si";
 import bannerLossy from "./assets/banner-lossy.webp";
-import bannerLossless from "./assets/banner-lossless.webp";
 import avatarImg from "./assets/avatar.webp";
 import mosirLogo from "./assets/mosir-logo.svg";
 
@@ -111,16 +110,11 @@ export default function SocialLinksLandingPage() {
   const [bannerSrc, setBannerSrc] = useState(BANNER_PLACEHOLDER);
   const theme = isDark ? THEMES.dark : THEMES.light;
 
-  // Progressive banner loading: placeholder → lossy → lossless
+  // Progressive banner loading: placeholder → lossy
   useEffect(() => {
     const lossy = new Image();
     lossy.src = bannerLossy;
-    lossy.onload = () => {
-      setBannerSrc(bannerLossy);
-      const lossless = new Image();
-      lossless.src = bannerLossless;
-      lossless.onload = () => setBannerSrc(bannerLossless);
-    };
+    lossy.onload = () => setBannerSrc(bannerLossy);
   }, []);
 
   useEffect(() => {
