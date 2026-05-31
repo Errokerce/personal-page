@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { SiTwitch, SiX, SiYoutube, SiDiscord } from "react-icons/si";
 import bannerLossy from "./assets/banner-lossy.webp";
 import avatarImg from "./assets/avatar.webp";
