@@ -1,5 +1,40 @@
 @import "tailwindcss";
 
+.page-bg-dark,
+.page-bg-light {
+  position: relative;
+  isolation: isolate;
+}
+
+.page-bg-dark::before,
+.page-bg-light::before {
+  content: "";
+  position: fixed;
+  top: -10rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(72rem, 100vw);
+  height: min(40rem, 60vh);
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform;
+}
+
+.page-bg-dark::before {
+  background: radial-gradient(ellipse at top, #2a1f26 0%, #1c171b 40%, transparent 70%);
+}
+
+.page-bg-light::before {
+  background: radial-gradient(ellipse at top, #ffe5f0 0%, #f7d8e4 40%, transparent 70%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-bg-dark::before,
+  .page-bg-light::before {
+    display: none;
+  }
+}
+
 footer a {
   text-decoration: underline;
   text-underline-offset: 2px;

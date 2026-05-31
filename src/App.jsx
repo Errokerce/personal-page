@@ -50,7 +50,7 @@ const LINKS = [
 
 const THEMES = {
   dark: {
-    pageBg: "bg-[radial-gradient(circle_at_top,_#2a1f26,_#1c171b_35%,_#131114_70%,_#0d0b0d_100%)]",
+    pageBg: "bg-[#0d0b0d] page-bg-dark",
     pageText: "text-stone-100",
     shell: "border-white/10 bg-white/5",
     leftOverlay: "bg-[linear-gradient(160deg,_rgba(255,255,255,0.05),_rgba(255,255,255,0.02))]",
@@ -71,7 +71,7 @@ const THEMES = {
     toggleLabel: "text-white/70",
   },
   light: {
-    pageBg: "bg-[radial-gradient(circle_at_top,_#ffe5f0,_#f7d8e4_35%,_#e9d0dc_70%,_#dfc4d1_100%)]",
+    pageBg: "bg-[#dfc4d1] page-bg-light",
     pageText: "text-stone-800",
     shell: "border-white/40 bg-white/20",
     leftOverlay: "bg-[linear-gradient(160deg,_rgba(255,255,255,0.16),_rgba(255,255,255,0.04))]",
@@ -181,7 +181,7 @@ export default function SocialLinksLandingPage() {
           </button>
         </label>
       </div>
-      <div className="mx-auto grid min-h-screen w-full place-items-center p-6 md:p-10">
+      <div className="relative z-10 mx-auto grid min-h-screen w-full place-items-center p-6 md:p-10">
         <div
           className={`animate-fade-in-up grid w-full overflow-hidden rounded-[2rem] border shadow-xl transition-colors duration-300 md:grid-cols-[minmax(0,1fr)_400px] ${theme.shell}`}
         >
