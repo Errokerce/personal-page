@@ -1,5 +1,94 @@
 @import "tailwindcss";
 
+:root {
+  color-scheme: dark;
+  --page-bg-start: #1c171b;
+  --page-bg-end: #0d0b0d;
+  --page-radial-inner: rgba(94, 68, 80, 0.72);
+  --page-radial-mid: rgba(42, 31, 38, 0.34);
+  --page-radial-opacity: 1;
+}
+
+:root[data-theme="light"],
+.page-background[data-theme="light"] {
+  color-scheme: light;
+  --page-bg-start: #f7d8e4;
+  --page-bg-end: #dfc4d1;
+  --page-radial-inner: rgba(255, 229, 240, 0.78);
+  --page-radial-mid: rgba(247, 216, 228, 0.34);
+  --page-radial-opacity: 0.82;
+}
+
+:root[data-theme="dark"],
+.page-background[data-theme="dark"] {
+  color-scheme: dark;
+  --page-bg-start: #1c171b;
+  --page-bg-end: #0d0b0d;
+  --page-radial-inner: rgba(94, 68, 80, 0.72);
+  --page-radial-mid: rgba(42, 31, 38, 0.34);
+  --page-radial-opacity: 1;
+}
+
+body {
+  margin: 0;
+  background-color: var(--page-bg-end);
+}
+
+.page-background {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--page-bg-start), var(--page-bg-end) 68%);
+}
+
+.page-background::before {
+  content: "";
+  position: fixed;
+  z-index: 0;
+  top: -14rem;
+  left: 50%;
+  width: min(72rem, 100vw);
+  max-width: 72rem;
+  height: min(42rem, 70vh);
+  max-height: 42rem;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at top,
+    var(--page-radial-inner) 0%,
+    var(--page-radial-mid) 42%,
+    transparent 72%
+  );
+  opacity: var(--page-radial-opacity);
+  transform: translateX(-50%);
+}
+
+@media (min-resolution: 2dppx) {
+  .page-background::before {
+    top: -10rem;
+    width: min(54rem, 100vw);
+    height: min(30rem, 48vh);
+    opacity: calc(var(--page-radial-opacity) * 0.62);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-background,
+  .page-background::before {
+    transition: none;
+  }
+
+  .page-background::before {
+    top: -8rem;
+    width: min(44rem, 100vw);
+    height: min(24rem, 38vh);
+    opacity: calc(var(--page-radial-opacity) * 0.48);
+  }
+
+  .animate-fade-in-up {
+    animation: none;
+  }
+}
+
 footer a {
   text-decoration: underline;
   text-underline-offset: 2px;

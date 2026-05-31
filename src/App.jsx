@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { SiTwitch, SiX, SiYoutube, SiDiscord } from "react-icons/si";
 import bannerLossy from "./assets/banner-lossy.webp";
 import avatarImg from "./assets/avatar.webp";
@@ -50,7 +50,7 @@ const LINKS = [
 
 const THEMES = {
   dark: {
-    pageBg: "bg-[radial-gradient(circle_at_top,_#2a1f26,_#1c171b_35%,_#131114_70%,_#0d0b0d_100%)]",
+    pageBg: "page-background",
     pageText: "text-stone-100",
     shell: "border-white/10 bg-white/5",
     leftOverlay: "bg-[linear-gradient(160deg,_rgba(255,255,255,0.05),_rgba(255,255,255,0.02))]",
@@ -71,7 +71,7 @@ const THEMES = {
     toggleLabel: "text-white/70",
   },
   light: {
-    pageBg: "bg-[radial-gradient(circle_at_top,_#ffe5f0,_#f7d8e4_35%,_#e9d0dc_70%,_#dfc4d1_100%)]",
+    pageBg: "page-background",
     pageText: "text-stone-800",
     shell: "border-white/40 bg-white/20",
     leftOverlay: "bg-[linear-gradient(160deg,_rgba(255,255,255,0.16),_rgba(255,255,255,0.04))]",
@@ -159,7 +159,10 @@ export default function SocialLinksLandingPage() {
   }, []);
 
   return (
-    <div className={`min-h-screen ${theme.pageBg} ${theme.pageText} transition-colors duration-300`}>
+    <div
+      data-theme={isDark ? "dark" : "light"}
+      className={`min-h-screen ${theme.pageBg} ${theme.pageText} transition-colors duration-300`}
+    >
       <div className="fixed bottom-8 right-8 z-30 md:top-12 md:bottom-auto md:right-12">
         <label
           className={`flex items-center gap-3 rounded-full border px-3 py-2 shadow-lg backdrop-blur-sm transition-colors duration-300 ${theme.toggleWrap}`}
@@ -181,7 +184,7 @@ export default function SocialLinksLandingPage() {
           </button>
         </label>
       </div>
-      <div className="mx-auto grid min-h-screen w-full place-items-center p-6 md:p-10">
+      <div className="relative z-10 mx-auto grid min-h-screen w-full place-items-center p-6 md:p-10">
         <div
           className={`animate-fade-in-up grid w-full overflow-hidden rounded-[2rem] border shadow-xl transition-colors duration-300 md:grid-cols-[minmax(0,1fr)_400px] ${theme.shell}`}
         >
